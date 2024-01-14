@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC');
+
+.drum-pad{
+  background-color: antiquewhite;
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+  font-size: large;
+  font-weight: 900;
+  font-family: 'Orbitron';
+}
+
+.drum-pad:hover{
+  background-color: #808080;
+}
+
+.center{
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-top: 40px;
+}
+
+.options{
+  width: 240px;
+  height: 240px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.options > h2 {
+  text-align: center;
+  padding: 0;
+  margin: 2px;
+}
+
+.main_tile{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.links{
+  text-align: center;
+  font-family: 'IM Fell English SC', sans-serif;
+}
+
+.options > button{
+  border: none;
+  background-color: red;
+  border-radius: 100%;
+  padding: 10px;
+}
+
+.display{
+  background-color: #202020;
+  border-radius: 10px;
+  width: 250px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls{
+  width: 240px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label_controls{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.c_controls{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.labels{
+  display: flex;
+  justify-content: space-between;
+}
+
+.volume{
+  width: 150px;
+}
+
+.power{
+  width: 70px;
+}
+
+.labels > p{
+  text-align: center;
+  font-weight: 800;
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 35px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid orangered;
+  background-color: #202020;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 28px;
+  width: 28px;
+  left: 3px;
+  bottom: 2px;
+  background-color: orangered;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider{
+  border: 2px solid #86DC3D;
+}
+
+input:checked + .slider:before {
+  background-color: #86DC3D;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(33px);
+  -ms-transform: translateX(33px);
+  transform: translateX(33px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 34px;
+}
+
+.range_slider{
+  overflow: hidden;
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 150px; /* Full-width */
+  height: 35px; /* Specified height */
+  background: #202020; /* Grey background */
+  outline: none; /* Remove outline */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  border-radius: 34px;
+}
+.range_slider[disabled]{
+  background: #101010;
+}
+
+.range_slider[disabled]::-webkit-slider-thumb{
+  background: #202020;
+  box-shadow: -150px 0 0 150px #202020;
+}
+
+.range_slider[disabled]::-moz-range-thumb{
+  background: #202020;
+  box-shadow: -150px 0 0 150px #202020;
+}
+
+.range_slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 15px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: #808080; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 34px;
+  box-shadow: -150px 0 0 150px #808080;
+}
+
+.range_slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #808080; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 34px;
+  box-shadow: -150px 0 0 150px #808080;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .center{
+    margin: 0;
+    flex-direction: column;
+  }
+  .options{
+    height: 200px;
+    padding: 20px;
+    padding-top: 0;
+  }
+  .links{
+    margin: 0;
+  }
+  .display{
+    height: 50px;
+  }
+  .main_tile{
+    margin: 0;
+  }
+}
